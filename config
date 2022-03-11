@@ -1,0 +1,34 @@
+apiVersion: v1
+clusters:
+- cluster:
+    server: https://2850B511B4D4D5EF77BF6CB4527488CC.gr7.us-east-1.eks.amazonaws.com
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM1ekNDQWMrZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJeU1ETXhNREU0TVRBME0xb1hEVE15TURNd056RTRNVEEwTTFvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTDNNCkdxTUJpV2tLNVAwMkg1VTcyRStFQWhUMFFvajltYnlXL1cvYXRvNjA4TjVwLzF0T25ubStINW81RENWeElIRHMKVm8zWjgwOTlKVmtOMnV3ODRNblE1akZZTDRLeTZBSURjancxVmg2MUJFZ0Rld1RQQ3MxQWpOek1LU29hVjRPdgo3Sy8vMWVuL1FFT3VpL2U1emdyVTZzUEkwd3Q1R2tNWHArN1pkMGRoTHRPbWpFY1dIUlpCMnZxejByS2w1VGpTCis1dHNFUkVwQzl2S2ZBSFFKUXEwWExHZ1lWalcvVisrcDNFSkxqa3VabEhOS2p6eGNka0JuQ0x5VTF1NVFFTXUKclk0SHlmaFc2QjJsL0RvbldKYkdmVEtTYjlkeDJiZjRWQXlndHMwNTJ1VHlpVEJJOVNYbSs3U1F0OTBXalpYVwpLRkZ3RGEwQVJUdE5IV2YxSlhrQ0F3RUFBYU5DTUVBd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZLOEZmUHNFQytOdmIvSHk3ZlJMdysyME1tYlhNQTBHQ1NxR1NJYjMKRFFFQkN3VUFBNElCQVFBSlpxaW1WaUxOZWsybWh3Z3pRUFg3b2hvbXptVkJHdnR4b004MkZFQnRkWSt5RzRUcwpqK2tzRktBakd1S3JiamE0d2crWGw1R0ozd3lUNW1LY1o2WWEyREQ1eXMxYVJETXkzVDZFckNCaHprVjRWWXh0CjZqUmlZaWJ6RG9sRnZ3VGhtL2FFdzd4c0ZLbGtuN0RVM05GN1RjM1lwNWNFNW5BKzNKSDJDK0tHWVZHd3J4d0MKNE53OHlTZU1xUWRWUnlaV0dpSG9VeXdIc05XRE1IbEp3Z1hDeWt2OXNEWlZuNWtpNlBOWWQxUGpMZzZvckhnQgo3KzZvcGc2elN0UDZyS2M2a01xQXV2WnRPRTJobFhuSG1KWEcrVkIxdUorTzRnRTczWUovNld3WW83S0NSYy8yClF3aE9pYjh5Z2N0SGswSTRBRlJDSmhBWHM5d2IvZWptVnIwVAotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+  name: uhuu-prd-rancher-cluster.us-east-1.eksctl.io
+contexts:
+- context:
+    cluster: uhuu-prd-rancher-cluster.us-east-1.eksctl.io
+    user: johnny.macedo@uhuu-prd-rancher-cluster.us-east-1.eksctl.io
+  name: johnny.macedo@uhuu-prd-rancher-cluster.us-east-1.eksctl.io
+#current-context: uhuu-prd-rancher-cluster.us-east-1.eksctl.io
+current-context: johnny.macedo@uhuu-prd-rancher-cluster.us-east-1.eksctl.io
+kind: Config
+preferences: {}
+users:
+- name: johnny.macedo@uhuu-prd-rancher-cluster.us-east-1.eksctl.io
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1alpha1
+      args:
+      - eks
+      - get-token
+      - --cluster-name
+      - uhuu-prd-rancher-cluster
+      - --region
+      - us-east-1
+      command: aws
+      env:
+      - name: AWS_STS_REGIONAL_ENDPOINTS
+        value: regional
+      - name: AWS_PROFILE
+        value: default
+      provideClusterInfo: false
